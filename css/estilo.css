@@ -65,7 +65,7 @@ i.bi.bi-file-pdf-fill::before{
 }
 
 i.bi.bi-file-earmark-word-fill{
-    color: rgb(41, 41, 250);
+    color: rgb(155, 155, 247);
 }
 a{
     text-decoration: none;
@@ -78,10 +78,12 @@ a{
 .cards{
   width: 300px;
   height: 280px;
-  background-color: rgb(7, 0, 40);
+  background: #020024;
+  background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 71%, rgba(3, 0, 92, 1) 100%);
   border-radius: 10px;
   padding: 25px;
   margin: 15px;
+  display: flex;
 }
 
 button{
@@ -96,6 +98,7 @@ button{
     position:relative;
     top: 100px;
     margin: 0 auto;
+    align-items: center;
 
 }
 
