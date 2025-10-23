@@ -176,9 +176,9 @@ span{
   }
 
   .cards {
-    width: 100%;
+    width: 90%;
     margin: 10px 0;
-    height: auto;
+    height: 180px;
     padding: 20px;
   }
 
