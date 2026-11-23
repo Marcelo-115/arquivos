@@ -1,94 +1,136 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Documentos do Check-in</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Acervo interno de documentos e planilhas de apoio ao check-in.">
+  <meta name="theme-color" content="#0f4c5c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1a20" media="(prefers-color-scheme: dark)">
+  <title>Acervo interno | Check-in</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f4c5c'/%3E%3Cpath d='M10 8h8l5 5v11a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/acervo.js" defer></script>
 </head>
-
 <body>
-    <div class="conteiner-principal">
-        <H1>Planilhas e documentos usados no check-in</H1>
-        <div class="conteiner">
-            <h2>Planilhas de calculos</h2> 
-            <div class="planilhas">
-                <div class="cards">
-                      <a href="arquivos/Planilha de calculo de Areia.xlsx" target="_blank"> 
-                        <i class="bi bi-file-earmark-spreadsheet-fill"></i> <br> 
-                          <span class="card">Planilha de calculo de areia</span>
-                            <button>Dowloader</button>
-                            </a>
-                            <br>
-                        </div>
-            
-            <div class="cards">
-                <a href="arquivos/Planilha de calculo de tabua de pinus.xlsx" target="_blank">
-                    <i class="bi bi-file-earmark-spreadsheet-fill"></i><br>
-                    <span class="card"> Planilha de calculo de tabua pinus</span>
-                    <button>Dowloader</button>
-                </a><br>
-            </div>
-            <div class="cards">
-                <a href="arquivos/Planilha de conversão de peso por barra de ferro.xlsx" target="_blank">
-                    <i conversão de class="bi bi-file-earmark-spreadsheet-fill"></i> <br> <span class="card">Planilha de ferro </span>
-                    <button>Dowloader</button>
-                </a> <br>
-            </div>
-            </div>
-            <h2>Documentos Editaveis</h2>
-            <div class="documentos">
-                <div class="cards">
-                    <a href="arquivos/PLACAS.docx" target="_blank">
-                        <i class="bi bi-file-earmark-word-fill"></i><br>
-                        <span class="card">Placas e medidas de carretas</span>
-                        <button>Dowloader</button>
-                    </a>
-                </div>
-            </div>
+  <a class="skip-link" href="#conteudo">Pular para os arquivos</a>
 
-            <h2>PDFs de comprovantes</h2> 
-            <div class="pdf">
-                <div class="cards">
-                  <a href="arquivos/Declaração de conhecimento retido.pdf" target="_blank">
-                    <i class="bi bi-file-pdf-fill"></i><br> 
-                   <span class="card">Declaração de conhecimento retido</span>
-                  <button>Dowloader</button>
-                  </a> <br>
-                  </div>
-                <div class="cards">
-                  <a href="arquivos/formulario de bloqueios.pdf" target="_blank">
-                    <i class="bi bi-file-pdf-fill"></i><br> 
-                   <span class="card">Formulario de bloqueio</span>
-                  <button>Dowloader</button>
-                  </a> <br>
-                  </div>
-                <div class="cards">
-                  <a href="arquivos/ROMANEIO DE AREIAS.pdf" target="_blank">
-                    <i class="bi bi-file-pdf-fill"></i><br> 
-                   <span class="card">Romaneio de Areias</span>
-                  <button>Dowloader</button>
-                  </a> <br>
-                  </div>
-               <div class="cards">
-                  <a href="arquivos/Romaneio de Gás.pdf" target="_blank">
-                    <i class="bi bi-file-pdf-fill"></i><br> 
-                   <span class="card">Romaneio de Gás</span>
-                  <button>Dowloader</button>
-                  </a> <br>
-                  </div>
-               <div class="cards">
-                  <a href="arquivos/Romaneio de Tijolo.pdf" target="_blank">
-                    <i class="bi bi-file-pdf-fill"></i><br> 
-                   <span class="card">Romaneio de Tijolo</span>
-                  <button>Dowloader</button>
-                  </a> <br>
-                </div>
-            </div>
-        </div>
+  <header class="hero">
+    <div class="wrap">
+      <p class="hero__eyebrow">Acervo interno · Check-in</p>
+      <h1 class="hero__title">Documentos e planilhas</h1>
+      <p class="hero__intro">Arquivos de apoio usados na rotina de check-in. PDFs abrem no navegador; planilhas e documentos Word são baixados.</p>
+
+      <search class="search" role="search">
+        <label class="visually-hidden" for="busca">Buscar arquivo</label>
+        <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input class="search__input" id="busca" type="search" placeholder="Buscar arquivo…" autocomplete="off" spellcheck="false">
+        <kbd class="search__hint" aria-hidden="true">/</kbd>
+      </search>
     </div>
-</body>
+  </header>
 
+  <main id="conteudo" class="wrap content">
+    <p class="results-status" role="status" aria-live="polite"></p>
+
+    <!--
+      Para adicionar um arquivo: copie um <li> da seção correspondente,
+      troque o href (caminho do arquivo) e o título. Os contadores e a busca
+      se atualizam sozinhos.
+    -->
+
+    <section class="category" aria-labelledby="cat-planilhas">
+      <header class="category__header">
+        <h2 class="category__title" id="cat-planilhas">Planilhas de cálculo</h2>
+        <span class="category__count" data-count></span>
+      </header>
+      <ul class="file-grid" role="list">
+        <li class="file-card" data-type="xlsx">
+          <a class="file-card__link" href="arquivos/Planilha%20de%20calculo%20de%20Areia.xlsx" download>
+            <span class="file-card__badge">XLSX</span>
+            <span class="file-card__title">Cálculo de areia</span>
+            <span class="file-card__action">Baixar planilha</span>
+          </a>
+        </li>
+        <li class="file-card" data-type="xlsx">
+          <a class="file-card__link" href="arquivos/Planilha%20de%20calculo%20de%20tabua%20de%20pinus.xlsx" download>
+            <span class="file-card__badge">XLSX</span>
+            <span class="file-card__title">Cálculo de tábua de pinus</span>
+            <span class="file-card__action">Baixar planilha</span>
+          </a>
+        </li>
+        <li class="file-card" data-type="xlsx">
+          <a class="file-card__link" href="arquivos/Planilha%20de%20convers%C3%A3o%20de%20peso%20por%20barra%20de%20ferro.xlsx" download>
+            <span class="file-card__badge">XLSX</span>
+            <span class="file-card__title">Conversão de peso por barra de ferro</span>
+            <span class="file-card__action">Baixar planilha</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="category" aria-labelledby="cat-editaveis">
+      <header class="category__header">
+        <h2 class="category__title" id="cat-editaveis">Documentos editáveis</h2>
+        <span class="category__count" data-count></span>
+      </header>
+      <ul class="file-grid" role="list">
+        <li class="file-card" data-type="docx">
+          <a class="file-card__link" href="arquivos/PLACAS.docx" download>
+            <span class="file-card__badge">DOCX</span>
+            <span class="file-card__title">Placas e medidas de carretas</span>
+            <span class="file-card__action">Baixar documento</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="category" aria-labelledby="cat-pdf">
+      <header class="category__header">
+        <h2 class="category__title" id="cat-pdf">PDFs e comprovantes</h2>
+        <span class="category__count" data-count></span>
+      </header>
+      <ul class="file-grid" role="list">
+        <li class="file-card" data-type="pdf">
+          <a class="file-card__link" href="arquivos/Declara%C3%A7%C3%A3o%20de%20conhecimento%20retido.pdf" target="_blank" rel="noopener">
+            <span class="file-card__badge">PDF</span>
+            <span class="file-card__title">Declaração de conhecimento retido</span>
+            <span class="file-card__action">Abrir PDF</span>
+          </a>
+        </li>
+        <li class="file-card" data-type="pdf">
+          <a class="file-card__link" href="arquivos/formulario%20de%20bloqueios.pdf" target="_blank" rel="noopener">
+            <span class="file-card__badge">PDF</span>
+            <span class="file-card__title">Formulário de bloqueios</span>
+            <span class="file-card__action">Abrir PDF</span>
+          </a>
+        </li>
+        <li class="file-card" data-type="pdf">
+          <a class="file-card__link" href="arquivos/ROMANEIO%20DE%20AREIAS.pdf" target="_blank" rel="noopener">
+            <span class="file-card__badge">PDF</span>
+            <span class="file-card__title">Romaneio de areias</span>
+            <span class="file-card__action">Abrir PDF</span>
+          </a>
+        </li>
+        <li class="file-card" data-type="pdf">
+          <a class="file-card__link" href="arquivos/Romaneio%20de%20G%C3%A1s.pdf" target="_blank" rel="noopener">
+            <span class="file-card__badge">PDF</span>
+            <span class="file-card__title">Romaneio de gás</span>
+            <span class="file-card__action">Abrir PDF</span>
+          </a>
+        </li>
+        <li class="file-card" data-type="pdf">
+          <a class="file-card__link" href="arquivos/Romaneio%20de%20Tijolo.pdf" target="_blank" rel="noopener">
+            <span class="file-card__badge">PDF</span>
+            <span class="file-card__title">Romaneio de tijolo</span>
+            <span class="file-card__action">Abrir PDF</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <p class="empty-state" hidden>
+      Nenhum arquivo encontrado. <button class="empty-state__reset" type="button">Limpar busca</button>
+    </p>
+  </main>
+</body>
 </html>
